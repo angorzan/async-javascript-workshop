@@ -6,7 +6,9 @@ Make it run without errors but you cannot change the location of the `let` state
 
 ```js
 function doAsyncTask(cb) {
+  setImmediate(()=>{
   cb();
+  });
 }
 doAsyncTask(_ => console.log(message));
 
