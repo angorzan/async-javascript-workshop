@@ -24,12 +24,12 @@ const fs = require("fs");
 
 function readFileThenDo(next) {
   fs.readFile("./blah.nofile", (err, data) => {
-    next(data);
+    next(err, data);
   });
 }
 
-readFileThenDo(data => {
-  console.log(data);
+readFileThenDo((err, data) => {
+  console.log(err, data);
 });
 ```
 
